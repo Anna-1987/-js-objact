@@ -1,6 +1,6 @@
 const friends = [
     { name: 'Mango', online: false },
-    { name: 'Kivi', online: true },
+    { name: 'Kivi', online: false },
     { name: 'Poly', online: true },
     { name: 'Ajax', online: false },
        
@@ -49,16 +49,31 @@ console.table(friends);
 
 // ****-------получае имена только тех друзей которіе онлайн ------
 
-const getAllFriendsOnline = function (allFriends) {
-    const onlineFriend = [];
+// const getAllFriendsOnline = function (allFriends) {
+//     const onlineFriend = [];
+
+//     for (const friend of allFriends) {
+        
+//         if (friend.online) {
+//             onlineFriend.push(friend);   
+//      }
+//     }
+//     return onlineFriend;
+// }
+
+// console.log(getAllFriendsOnline(friends));
+
+// ****------получить друзей офлайн------
+const getAllFriendsOffline = function (allFriends) {
+    const offlineFriend = [];
 
     for (const friend of allFriends) {
         
-        if (friend.online) {
-            onlineFriend.push(friend);   
+        if (!friend.online) {
+            offlineFriend.push(friend);   
      }
     }
-    return onlineFriend;
+    return offlineFriend;
 }
 
-console.log(getAllFriendsOnline(friends));
+console.log(getAllFriendsOffline(friends));
