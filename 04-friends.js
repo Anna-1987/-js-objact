@@ -64,16 +64,37 @@ console.table(friends);
 // console.log(getAllFriendsOnline(friends));
 
 // ****------получить друзей офлайн------
-const getAllFriendsOffline = function (allFriends) {
-    const offlineFriend = [];
+// const getAllFriendsOffline = function (allFriends) {
+//     const offlineFriend = [];
+
+//     for (const friend of allFriends) {
+        
+//         if (!friend.online) {
+//             offlineFriend.push(friend);   
+//      }
+//     }
+//     return offlineFriend;
+// }
+
+// console.log(getAllFriendsOffline(friends));
+
+// ****------ создать два массива онлайн и оффлайн-------
+
+const getFriendByOnlineStatus = function (allFriends) {
+    const friendsByStatus = {
+        onlineArry: [],
+        offlinnArry: [],
+
+    }
 
     for (const friend of allFriends) {
-        
-        if (!friend.online) {
-            offlineFriend.push(friend);   
-     }
+        if (friend.online) {
+            friendsByStatus.onlineArry.push(friend);
+        } 
+            friendsByStatus.offlinnArry.push(friend);
+
     }
-    return offlineFriend;
+    return friendsByStatus;
 }
 
-console.log(getAllFriendsOffline(friends));
+console.table(getFriendByOnlineStatus(friends));
