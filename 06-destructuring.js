@@ -66,6 +66,34 @@
 // }
 
 
+// const profile = {
+//     name: 'Jacques Gluke',
+//     tag: 'jgluke',
+//     location: 'Ocho Rios, Jamaica',
+//     avatar: 'https://cakeshop.com.ua/ru/product/vafelnaya-kartinka',
+//     stats: {
+//         followers: 5603,
+//         views: 4827,
+//         likes: 1308,
+//     },
+// };
+
+// const { name, tag, location, ...restProps } = profile;
+
+// console.log(name, tag, location, restProps);
+
+// *****Патерн "Объект настроек "
+
+const showProfileInto = function (useProfile) {
+    const { name,
+        tag,
+        location,
+        avatar,
+        stats: { followers, views, likes }
+    } = useProfile;
+    console.log(name, tag,location, avatar, followers, views, likes);
+    console.log(useProfile);
+};
 
 const profile = {
     name: 'Jacques Gluke',
@@ -79,6 +107,6 @@ const profile = {
     },
 };
 
-const { name, tag, location, ...restProps } = profile;
+showProfileInto(profile);
 
-console.log(name, tag, location, restProps);
+
